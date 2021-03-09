@@ -1,27 +1,53 @@
 
 extends layout
 
-block content
-  include author
-  each article in articles
-    article.article.intro
-      header
-        p.date
-          span= moment.utc(article.date).format('DD. MMMM YYYY')
-        h2
-          a(href=article.url)= article.title
-      section.content
-        if article.intro.length > 0
-          != typogr(article.intro).typogrify()
-        if article.hasMore
-          p.more
-            a(href=article.url) more
+block main
+  .row
+    .col-md-4.col-sm-4.col-xs-12
+      .panel.panel-default.my_panel
+        .panel-body
+          style.
+            .my_panel > .panel-body {
+             padding: 0px;
+            }
+            .my_panel > .panel-body > img {
+             display: block;
+             height: auto;
+             max-width: 100%;
+            }
+            .my_panel > .panel-footer {
+            text-align: left;
+            }
+          img.img-responsive.pull-right(src="image/1.png", alt="")
 
-block prepend footer
-  div.nav
-    if prevPage
-      a(href=prevPage.url) &laquo; Newer
-    else
-      a(href='/archive.html') &laquo; Archives
-    if nextPage
-      a(href=nextPage.url) Next page &raquo;
+    .col-md-4.col-sm-4.col-xs-12
+      .panel.panel-default.my_panel
+        .panel-body
+        
+        .panel-footer
+          h3 Миронюк Дмитрий Константинович
+
+          ul
+            li
+              p 18.09.1992
+            li
+              p mironiukdk@gmail.com
+            li
+              p г. Красноярск
+
+              block main
+ 
+    .col-md-4.col-sm-4.col-xs-12
+      .panel.panel-default.my_panel
+        .panel-body
+        
+        .panel-footer
+          h3 Миронюк Дмитрий Константинович
+
+          ul
+            li
+              a 18.09.1992
+            li
+              a mironiukdk@gmail.com
+            li
+              a г. Красноярск

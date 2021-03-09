@@ -1,26 +1,21 @@
 {
   "locals": {
-    "url": "http://localhost:8080",
+    "url": "https://github.com/Dmitriy-Mir/dmitriy-mir.github.io",
     "name": "Миронюк Дмитрий Константинович",
     "owner": "Someone",
-    "description": "Резюме на GitHub Page"
+    "description": "GitHub Page Resume"
   },
-  "plugins": [
-    "./plugins/paginator.coffee"
-  ],
+
   "require": {
     "moment": "moment",
     "_": "underscore",
     "typogr": "typogr"
   },
-  "pug": {
+  "jade": {
     "pretty": true
   },
   "markdown": {
     "smartLists": true,
     "smartypants": true
-  },
-  "paginator": {
-    "perPage": 3
-  }
+              }
 }
